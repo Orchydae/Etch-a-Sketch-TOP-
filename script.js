@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    let isMousePressed = true;
+    let isMousePressed = false;
     const gridContainer = document.querySelector('.grid-container');
 
     for (let i = 0; i < 16; i++) {
@@ -29,5 +29,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(gridItem => gridItem.addEventListener('mousedown', ));
+    gridItems.forEach(gridItem => gridItem.addEventListener('mouseover', handleMouseMove));
+
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('mousedown', handleMouseDown);
 });
