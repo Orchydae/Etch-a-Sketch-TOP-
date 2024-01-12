@@ -5,10 +5,47 @@ body {
     margin: 0;
 }
 
-header, footer {
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.header, footer {
     padding: 1em;
     background-color: hsl(0, 0%, 20%);
     color: #fff;
+}
+
+.header-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.header-buttons > button {
+    background-color: red;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+}
+
+.color-container {
+    background-color: yellow;
+    border-radius: 20px;
+    height: 40px;
+    width: 40px;
+    overflow: hidden;
+}
+
+#color {
+    width: 150%;
+    height: 150%;
+    margin: -10px;
+    padding: -10px;
+    border: none;
+    outline: none;
+    background: none;
 }
 
 .container {
@@ -16,42 +53,31 @@ header, footer {
     flex: 1;
     flex-direction: row;
     background-color: yellow;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .left-container {
-    display: flex;
-    flex: 1;
     background-color: blue;
-}
-
-#left-options {
     display: flex;
     flex-direction: column;
-    margin: 10px;
+    justify-content: flex-end;
     gap: 10px;
+    margin: 10px;
 }
 
-#left-options > button {
+.left-container > button {
     background-color: red;
     height: 50px;
     border-radius: 10px;
 }
 
-#left-options > #color-picker {
-    border-radius: 20px;
-    margin-bottom: 100px;
-    height: 200px;
-    width: 200px;
-}
-
 .grid-container {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
-    gap: 2px;
-    width: 500px;
-    height: 500px;
-    margin: 100px 0px;
+    gap: 1px;
+    width: 600px;
+    height: 600px;
+    margin: 10px;
 }
 
 .grid-item {
@@ -62,10 +88,7 @@ header, footer {
 }
 
 .right-container {
-    display: flex;
-    flex: 1;
     background-color: green;
-    
 }
 
 #right-options {
@@ -76,10 +99,11 @@ header, footer {
     gap: 10px;
 }
 
-#right-options > button {
-    background-color: red;
-    height: 50px;
-    border-radius: 10px;
+.recent-colors > ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    list-style-type: none;
 }
 
 footer {
