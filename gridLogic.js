@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function changeColor(e) {
-        if (isMousePressed)
+        if (isMousePressed && e.target.classList.contains('grid-item'))
             e.target.style.backgroundColor = colorValue.value;
     }
 
@@ -29,12 +29,13 @@ document.addEventListener('DOMContentLoaded', () => {
         isMousePressed = false;
     }
 
-    function handleMouseDown() {
+    function handleMouseDown(e) {
         isMousePressed = true;
+        changeColor(e);
     }
 
     function handleMouseMove(e) {
-        if (isMousePressed)
+        if (isMousePressed) 
             changeColor(e);
     }
 
