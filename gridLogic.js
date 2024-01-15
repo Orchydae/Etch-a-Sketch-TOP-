@@ -1,18 +1,28 @@
 document.addEventListener('DOMContentLoaded', () => {
     let isMousePressed = false;
     const gridContainer = document.querySelector('.grid-container');
+    const gridSizeInput = document.querySelector('#grid-size');
+    const gridValueTxt = document.querySelector('#grid-size-value');
+    const colorValue = document.querySelector('#color');
 
-    for (let i = 0; i < 16; i++) {
-        for (let j = 0; j < 16; j++) {
+    function createGrid(size) {
+        gridContainer.innerHTML = ''; // Clear grid
+        gridContainer.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
+        gridValueTxt.textContent = `${size} x ${size}`;
+
+        for (let i = 0; i < size * size; i++) {
             const gridItem = document.createElement('div');
             gridItem.classList.add('grid-item');
             gridContainer.appendChild(gridItem);
         }
+
+        const gridItems = document.querySelectorAll('.grid-item');
+        gridItems.forEach(gridItem => gridItem.addEventListener('mouseover', handleMouseMove));
     }
 
     function changeColor(e) {
         if (isMousePressed)
-            e.target.style.backgroundColor = 'black';
+            e.target.style.backgroundColor = colorValue.value;
     }
 
     function handleMouseUp() {
@@ -28,8 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
             changeColor(e);
     }
 
-    const gridItems = document.querySelectorAll('.grid-item');
-    gridItems.forEach(gridItem => gridItem.addEventListener('mouseover', handleMouseMove));
+    gridSizeInput.addEventListener('input', () => {
+        const size = gridSizeInput.value;
+        createGrid(size);
+    });
+
+    createGrid(gridSizeInput.value);
 
     document.addEventListener('mouseup', handleMouseUp);
     document.addEventListener('mousedown', handleMouseDown);

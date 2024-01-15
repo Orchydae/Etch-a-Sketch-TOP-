@@ -9,6 +9,7 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
 }
 
 .header, footer {
@@ -53,7 +54,7 @@ body {
     flex: 1;
     flex-direction: row;
     background-color: yellow;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .left-container {
@@ -73,18 +74,19 @@ body {
 
 .grid-container {
     display: grid;
+    align-self: center;
     grid-template-columns: repeat(16, 1fr);
     gap: 1px;
-    width: 600px;
-    height: 600px;
-    margin: 10px;
+    width: 900px;
+    height: 900px;
+    margin: 20px;
 }
 
 .grid-item {
     width: 100%;
     padding-top: 100%;
     background-color: #ccc;
-    border: 1px solid #fff;
+    border: none;
 }
 
 .right-container {
