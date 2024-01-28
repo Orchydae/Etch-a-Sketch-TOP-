@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const fillButton = document.querySelector('#fill');
     const shadeButton = document.querySelector('#shade');
 
-    const gridItems = document.querySelectorAll('.grid-item');
     const color = document.querySelector('#color');
     const activeButtonColor = '#B0B5ED';
 
@@ -34,10 +33,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     fillButton.addEventListener('click', () => {
+        const gridItems = document.querySelectorAll('.grid-item');
         gridItems.forEach(gridItem => gridItem.style.backgroundColor = color.value);
+        console.log("Fill button clicked");
     });
 
     clearButton.addEventListener('click', () => {
+        const gridItems = document.querySelectorAll('.grid-item');
         gridItems.forEach(gridItem => gridItem.style.backgroundColor = '#FFF0F1');
     });
 });
