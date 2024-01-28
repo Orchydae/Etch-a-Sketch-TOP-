@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     let isMousePressed = false;
     let selectedButton = 'pen';
-    const activeButtonColor = 'blue';
+    const activeButtonColor = '#B0B5ED';
     const gridContainer = document.querySelector('.grid-container');
     const gridSizeInput = document.querySelector('#grid-size');
     const gridValueTxt = document.querySelector('#grid-size-value');
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function handleMouseDown(e) {
         isMousePressed = true;
         const button = e.target.closest('button');
-        if (button && button.closest('.header')) {
+        if (button && button.closest('.grid-buttons')) {
             selectedButton = button.id;
         }
         console.log(selectedButton);

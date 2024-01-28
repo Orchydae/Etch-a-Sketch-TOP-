@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const gridItems = document.querySelectorAll('.grid-item');
     const color = document.querySelector('#color');
+    const activeButtonColor = '#B0B5ED';
 
     const resetButtons = () => {
         [penButton, eraserButton, clearButton, fillButton, shadeButton].forEach(button => {
@@ -16,19 +17,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     penButton.addEventListener('click', () => {
         resetButtons();
-        penButton.style.backgroundColor = 'blue';
+        penButton.style.backgroundColor = activeButtonColor;
         console.log("Pen button clicked");
     });
 
     eraserButton.addEventListener('click', () => {
         resetButtons();
-        eraserButton.style.backgroundColor = 'blue';
+        eraserButton.style.backgroundColor = activeButtonColor;
         console.log("Eraser button clicked");
     });
 
     shadeButton.addEventListener('click', () => {
         resetButtons();
-        shadeButton.style.backgroundColor = 'blue';
+        shadeButton.style.backgroundColor = activeButtonColor;
         console.log("Shade button clicked");
     });
 
@@ -37,6 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     clearButton.addEventListener('click', () => {
-        gridItems.forEach(gridItem => gridItem.style.backgroundColor = 'white');
+        gridItems.forEach(gridItem => gridItem.style.backgroundColor = '#FFF0F1');
     });
 });

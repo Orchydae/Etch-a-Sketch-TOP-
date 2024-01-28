@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <title>Etch-a-Sketch</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:wght@300&display=swap">
     <script src="gridLogic.js"></script>
     <script src="buttonLogic.js"></script>
     <script src="recentColorsLogic.js"></script>
@@ -14,15 +15,22 @@
     <div class="header">
         <div>Etch-a-Sketch</div>
         <div class="header-buttons">
+            
+        </div>
+    </div>
+
+    <div class="top-grid">
+        <div class="left-none"></div>
+        <div class="grid-buttons">
             <button id="pen"><img src="resources/pencil.png" alt="Pen"></button>
             <button id="eraser"><img src="resources/eraser.png" alt="Eraser"></button>
             <button id="shade"><img src="resources/shade.png" alt="Shade"></button>
             <div class="color-container">
-                <input type="color" id="color">
+                <input type="color" id="color" style="cursor: pointer">
             </div>
         </div>
+        <div class="right-none"></div>
     </div>
-
     <div class="container">
         <div class="left-container">
             <button id="clear">Clear</button>
@@ -42,7 +50,11 @@
         </div>
     </div>
 
-    <footer>Footer</footer>
+    <footer>
+        <div class="footer-text">
+            <p>Created by David Nguyen - This project is part of 
+                <a href="https://www.theodinproject.com/lessons/foundations-etch-a-sketch" style="color:lightblue">The Odin Project curriculum</a>.</p>
+    </footer>
 </body>
 
 </html>
