@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         // Create a new li element
         const newLi = document.createElement('li');
 
+        // FIFO queue
+        if (recentColorsList.children.length >= 7) {
+            recentColorsList.removeChild(recentColorsList.firstElementChild);
+        }
         // Create a new button element
         const newButton = document.createElement('button');
         newButton.classList.add('recent-color');
